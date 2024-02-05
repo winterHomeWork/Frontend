@@ -4,16 +4,10 @@ import jsonData from "./data.json";
 import search from "assets/search.svg";
 import food from "assets/tomato.jpg";
 import { useNavigate } from "react-router-dom";
-import customAxios from "lib/customAxios";
 
 const Main = () => {
   const data = jsonData;
   const navigate = useNavigate();
-
-  // (async () => {
-    
-  //   localStorage.setItem("id",data)
-  // })();
 
   return (
     <>
