@@ -5,7 +5,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    setTimeout(() => {
       setLoading(false)
     },1500)
   },[])
