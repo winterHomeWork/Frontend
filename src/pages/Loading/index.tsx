@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './style';
-import GreenLogo from '../../../assets/GreenLogo.svg'
+import GreenLogo from 'assets/GreenLogo.svg'
 
 const Loading = () => {
-
   const navigate = useNavigate();
 
   useEffect(() => {
