@@ -39,12 +39,12 @@ export const Search = styled.img`
 `;
 export const Input = styled.input`
   width: 90%;
-  height: 35%;
+  height: 45%;
   border-radius: 8px;
   display: flex;
   justify-content: center;
   align-self: center;
-  margin: 2% 0 2% 0;
+  margin: 1% 0 2% 0;
 `;
 
 export const Main = styled.div`
