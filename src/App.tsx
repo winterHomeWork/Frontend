@@ -5,13 +5,14 @@ import Login from "./pages/Login";
 import Loading from "./pages/Loading";
 import Imsi from "pages/imsi";
 import Search from "pages/Search";
+import Main from "pages/main";
 
 function App() {
-  const code = new URLSearchParams(window.location.search).get("code",);
+  const code = new URLSearchParams(window.location.search).get("code");
   if (code) {
-    console.log("인가코드", code)
-    localStorage.setItem("code", code)
-    window.location.replace("/imsi")
+    console.log("인가코드", code);
+    localStorage.setItem("code", code);
+    window.location.replace("/imsi");
   }
 
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/imsi" element={<Imsi />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/Main" element={<Main />} />
       </Routes>
     </Router>
   );
