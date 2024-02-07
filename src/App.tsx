@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Loading from "./pages/Loading";
 import Imsi from "pages/imsi";
+import Search from "pages/Search";
 
 function App() {
   const code = new URLSearchParams(window.location.search).get("code",);
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Loading />} />
         <Route path="/login" element={<Login />} />
         <Route path="/imsi" element={<Imsi />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
     </Router>
   );
