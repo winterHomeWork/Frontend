@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "tag": "BEST",
+    "name": "제품명",
+    "image": "assets/tomato.jpg",
+    "price": "0,000,000원"
+  },
+  {
+    "id": 2,
+    "tag": "BEST",
+    "name": "제품명",
+    "image": "assets/tomato.jpg",
+    "price": "0,000,000원"
+  },
+  {
+    "id": 3,
+    "tag": "BEST",
+    "name": "제품명",
+    "image": "assets/tomato.jpg",
+    "price": "0,000,000원"
+  },
+  {
+    "id": 4,
+    "tag": "BEST",
+    "name": "제품명",
+    "image": "assets/tomato.jpg",
+    "price": "0,000,000원"
+  },
+  {
+    "id": 5,
+    "tag": "BEST",
+    "name": "제품명",
+    "image": "assets/tomato.jpg",
+    "price": "0,000,000원"
+  },
+  {
+    "id": 6,
+    "tag": "BEST",
+    "name": "제품명",
+    "image": "assets/tomato.jpg",
+    "price": "0,000,000원"
+  }
+]
