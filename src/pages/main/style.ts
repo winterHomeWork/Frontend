@@ -8,6 +8,7 @@ export const MainHeader = styled.div`
   flex-shrink: 0;
   border-radius: 0 0 16px 16px;
   background: #519727;
+  position: fixed;
 `;
 
 export const MainLayout = styled.div`
@@ -49,9 +50,10 @@ export const Input = styled.input`
 export const Main = styled.div`
   color: #000;
   font-family: Pretendard;
-  padding: 3%;
+  padding: 3% 0 3% 3%;
   font-size: 16px;
   font-weight: 600;
+  padding-top: 130px;
 `;
 
 export const MainPost = styled.div`
@@ -59,6 +61,7 @@ export const MainPost = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 5%;
   margin: 2% 0 0 4%;
+  height: 100%;
   overflow-x: hidden;
 `;
 

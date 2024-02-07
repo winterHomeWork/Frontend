@@ -40,5 +40,41 @@
     "name": "제품명",
     "image": "assets/tomato.jpg",
     "price": "0,000,000원"
+  },
+  {
+    "id": 7,
+    "tag": "BEST",
+    "name": "제품명",
+    "price": "0,000,000원"
+  },
+  {
+    "id": 8,
+    "tag": "BEST",
+    "name": "제품명",
+    "price": "0,000,000원"
+  },
+  {
+    "id": 9,
+    "tag": "BEST",
+    "name": "제품명",
+    "price": "0,000,000원"
+  },
+  {
+    "id": 10,
+    "tag": "BEST",
+    "name": "제품명",
+    "price": "0,000,000원"
+  },
+  {
+    "id": 11,
+    "tag": "BEST",
+    "name": "제품명",
+    "price": "0,000,000원"
+  },
+  {
+    "id": 12,
+    "tag": "BEST",
+    "name": "제품명",
+    "price": "0,000,000원"
   }
 ]
