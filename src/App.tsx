@@ -3,16 +3,15 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Loading from "./pages/Loading";
-import Imsi from "pages/imsi";
 import Search from "pages/Search";
 import Main from "pages/main";
 
 function App() {
   const code = new URLSearchParams(window.location.search).get("code");
   if (code) {
-    console.log("인가코드", code);
-    localStorage.setItem("code", code);
-    window.location.replace("/imsi");
+    console.log("인가코드", code)
+    localStorage.setItem("code", code)
+    window.location.replace("/main")
   }
 
   return (
@@ -20,9 +19,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Loading />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/imsi" element={<Imsi />} />
         <Route path="/search" element={<Search />} />
-        <Route path="/Main" element={<Main />} />
+        <Route path="/main" element={<Main />} />
+        <Route path="/kakao/callback" element={<div>콜백</div>} />
       </Routes>
     </Router>
   );
