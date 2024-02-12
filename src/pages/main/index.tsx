@@ -4,32 +4,39 @@ import jsonData from "./data.json";
 import search from "assets/search.svg";
 import food from "assets/tomato.jpg";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 function Main() {
   const data = jsonData;
   const navigate = useNavigate();
+  const [accessToken, setAccessToken] = useState("")
+  const [refreshToken, setRefreshToken] = useState("")
 
   useEffect(() => {
     const kakaoGet = async () => {
-      const baseUrl = 'https://prod-server.xquare.app/nudia/kakao/save';
+      const baseUrl = 'https://prod-server.xquare.app/nudia/kakao';
       const code = localStorage.getItem("code")
-      console.log(code)
       try {
-        const response = await axios.get(baseUrl, { 
-          params: { access_token: code },
+        const response = await axios.post(baseUrl, {
           headers: {
-            "Content-Type": `application/json`,
+            'Content-Type': 'application/json',
           },
+          code
         });
-        console.log(response.data);
+        setAccessToken(response.data.access_token)
+        setRefreshToken(response.data.refresh_token)
       } catch (error) {
         console.error(error);
       }
     }
     kakaoGet()
     },[])
+
+    if (accessToken && refreshToken) {
+      localStorage.setItem("access",accessToken)
+      localStorage.setItem("refresh",refreshToken)
+    }
 
   return (
     <>

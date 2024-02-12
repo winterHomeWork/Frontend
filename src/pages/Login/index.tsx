@@ -1,13 +1,21 @@
-import React, { useEffect } from "react";
 import * as S from "pages/Login/style";
 import whiteLogo from "assets/WhiteLogo.svg";
 import talk from "assets/talk.svg";
 import axios from "axios";
+import { useEffect } from "react";
 
 const Login = () => {
-  const Rest_api_key = "9518b1b3124468b73a6625b1c62623c0";
-  const redirect_uri = "http://localhost:3000/kakao/callback";
-  const kakaoURL = `https://kauth.kakao.com/oauth/authorize?client_id=${Rest_api_key}&redirect_uri=${redirect_uri}&response_type=code`;
+
+  let kakaoURL = ""
+
+  useEffect(() => {
+    const getKakaoURL = async () => {
+      const { data } = await axios.get("https://prod-server.xquare.app/nudia/kakao")
+      console.log(data)
+      kakaoURL = data
+    }
+    getKakaoURL()
+  },[])
 
   const handleLogin = () => {
     window.location.href = kakaoURL;
