@@ -120,4 +120,63 @@ export const CalorieInput = styled.input`
   padding-left: 12.5%;
 `;
 
-export const CalorieGraph = styled.div``;
+export const CalorieGraph = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 5%;
+`;
+
+export const GraphText = styled.p`
+  color: #000;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 5%;
+`;
+export const FilterPriceSlide = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4px;
+  width: 80%;
+  border-radius: 10px;
+  background-color: #dddddd;
+`;
+
+export const FilterPriceSlideInner = styled.div`
+  position: absolute;
+  left: 30%;
+  right: 30%;
+  height: 4px;
+  border-radius: 10px;
+  background-color: #b0b0b0;
+`;
+
+export const FilterPriceRangeWrap = styled.div`
+  position: relative;
+`;
+
+export const FilterPriceRangeMin = styled.input`
+  position: absolute;
+  top: -8px;
+  height: 7px;
+  width: 80%;
+  -webkit-appearance: none;
+  background: none;
+  pointer-events: none;
+
+  &::-webkit-slider-thumb {
+    pointer-events: auto;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 2px solid #b0b0b0;
+    background-color: white;
+    -webkit-appearance: none;
+  }
+`;
+
+export const FilterPriceRangeMax = styled(FilterPriceRangeMin)``;

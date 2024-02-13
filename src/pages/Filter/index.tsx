@@ -43,8 +43,18 @@ const Filter = () => {
           <S.CalorieInput type="number" placeholder="kcal" />-
           <S.CalorieInput type="number" placeholder="kcal" />
         </S.CalorieBox>
-        <S.CalorieGraph></S.CalorieGraph>
+        <S.CalorieGraph>
+          <S.GraphText>그래프</S.GraphText>
+        </S.CalorieGraph>
       </S.Calorie>
+
+      <S.FilterPriceSlide>
+        <S.FilterPriceSlideInner />
+      </S.FilterPriceSlide>
+      <S.FilterPriceRangeWrap>
+        <S.FilterPriceRangeMin type="range" />
+        <S.FilterPriceRangeMax type="range" />
+      </S.FilterPriceRangeWrap>
     </>
   );
 };
