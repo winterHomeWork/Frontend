@@ -21,7 +21,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<Search />} />
         <Route path="/main" element={<Main />} />
-        <Route path="/kakao/callback" element={<div>콜백</div>} />
       </Routes>
     </Router>
   );
