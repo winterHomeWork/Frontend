@@ -6,37 +6,18 @@ import food from "assets/tomato.jpg";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import customAxios from "lib/customAxios";
 
 function Main() {
   const data = jsonData;
   const navigate = useNavigate();
-  const [accessToken, setAccessToken] = useState("")
-  const [refreshToken, setRefreshToken] = useState("")
 
-  useEffect(() => {
-    const kakaoGet = async () => {
-      const baseUrl = 'https://prod-server.xquare.app/nudia/kakao';
-      const code = localStorage.getItem("code")
-      try {
-        const response = await axios.post(baseUrl, {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          code
-        });
-        setAccessToken(response.data.access_token)
-        setRefreshToken(response.data.refresh_token)
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    kakaoGet()
-    },[])
-
-    if (accessToken && refreshToken) {
-      localStorage.setItem("access",accessToken)
-      localStorage.setItem("refresh",refreshToken)
-    }
+  // useEffect(() => {
+  //   (async () => {
+  //     const { data } = await customAxios.get("/user");
+  //     console.log(data);
+  //   })();
+  // }, []);
 
   return (
     <>
@@ -51,7 +32,7 @@ function Main() {
       </S.MainHeader>
       <S.Main>추천 상품</S.Main>
       <S.MainPost>
-        {data.map((item,index) => {
+        {data.map((item, index) => {
           return (
             <S.Post key={index}>
               <S.PostImg src={food} />
