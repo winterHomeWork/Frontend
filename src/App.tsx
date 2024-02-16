@@ -11,6 +11,7 @@ import Loading from "./pages/Loading";
 import Search from "pages/Search";
 import Main from "pages/main";
 import axios from "axios";
+import Filter from "pages/Filter";
 
 function App() {
   const code = new URLSearchParams(window.location.search).get("code");
@@ -44,9 +45,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Loading />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/Main" element={<Main />} />
+        <Route path="/main" element={<Main />} />
         <Route path="/search" element={<Search />} />
         <Route path="/main" element={<Main />} />
+        <Route path="/filter" element={<Filter />} />
       </Routes>
     </Router>
   );
