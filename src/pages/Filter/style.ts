@@ -135,6 +135,13 @@ export const GraphText = styled.p`
   font-weight: 400;
   margin-top: 5%;
 `;
+
+export const Slide = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
 export const FilterPriceSlide = styled.div`
   position: relative;
   display: flex;
@@ -143,33 +150,28 @@ export const FilterPriceSlide = styled.div`
   height: 4px;
   width: 80%;
   border-radius: 10px;
-  background-color: #dddddd;
-`;
-
-export const FilterPriceSlideInner = styled.div`
-  position: absolute;
-  left: 30%;
-  right: 30%;
-  height: 4px;
-  border-radius: 10px;
-  background-color: #b0b0b0;
+  background-color: black;
 `;
 
 export const FilterPriceRangeWrap = styled.div`
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const FilterPriceRangeMin = styled.input`
   position: absolute;
   top: -8px;
   height: 7px;
-  width: 80%;
+  width: 85%;
   -webkit-appearance: none;
   background: none;
   pointer-events: none;
 
   &::-webkit-slider-thumb {
     pointer-events: auto;
+    margin-top: 4%;
     height: 30px;
     width: 30px;
     border-radius: 50%;
