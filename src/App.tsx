@@ -13,11 +13,7 @@ import Main from "pages/main";
 import axios from "axios";
 
 function App() {
-  const [accessToken, setAccessToken] = useState("");
-  const [refreshToken, setRefreshToken] = useState("");
-  const [shouldRedirect, setShouldRedirect] = useState(false);
   const code = new URLSearchParams(window.location.search).get("code");
-
   useEffect(() => {
     if (code) {
       const kakaoGet = async () => {
@@ -48,6 +44,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Loading />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/Main" element={<Main />} />
         <Route path="/search" element={<Search />} />
         <Route path="/main" element={<Main />} />
       </Routes>

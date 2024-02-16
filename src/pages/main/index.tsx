@@ -4,11 +4,11 @@ import jsonData from "./data.json";
 import search from "assets/search.svg";
 import food from "assets/tomato.jpg";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import customAxios from "lib/customAxios";
 
-function Main() {
+const Main = () => {
   const data = jsonData;
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ function Main() {
         <S.MainLayout>
           <S.LogoImg src={nudia}></S.LogoImg>
           <S.SearchBox>
-            <S.Input onClick={() => navigate(`/search`)} />
+            <S.Input onClick={() => navigate(`/Filter`)} />
             <S.Search src={search} />
           </S.SearchBox>
         </S.MainLayout>
@@ -47,5 +47,5 @@ function Main() {
       </S.MainPost>
     </>
   );
-}
+};
 export default Main;
