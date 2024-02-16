@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Search from "assets/search.svg"
+import Search from "assets/Search.svg"
 
 export const Display = styled.div`
   width: 100%;
