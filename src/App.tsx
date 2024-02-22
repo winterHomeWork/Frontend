@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useNavigate,
 } from "react-router-dom";
 import Login from "./pages/Login";
 import Loading from "./pages/Loading";
@@ -12,6 +11,7 @@ import Search from "pages/Search";
 import Main from "pages/main";
 import axios from "axios";
 import Filter from "pages/Filter";
+import customAxios from "lib/customAxios";
 
 function App() {
   const code = new URLSearchParams(window.location.search).get("code");
@@ -26,11 +26,15 @@ function App() {
             },
             code,
           });
-          
           if (response.data.access_token && response.data.refresh_token) {
             localStorage.setItem("access", response.data.access_token);
             localStorage.setItem("refresh", response.data.refresh_token);
-            window.location.replace("/main");
+          }
+          if (localStorage.getItem("access") && localStorage.getItem("refresh")) {
+            const { data } = await customAxios.get("/user");
+            localStorage.setItem("name", data.nickname)
+            localStorage.setItem("email",data.email)
+            window.location.replace("/main")
           }
         } catch (error) {
           console.error(error);
