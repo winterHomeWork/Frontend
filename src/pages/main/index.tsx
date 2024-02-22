@@ -50,7 +50,7 @@ const Main = () => {
         </S.MainLayout>
       </S.MainHeader>
       <S.Main>추천 상품</S.Main>
-      <S.MainPost>
+      <S.MainPost onClick={() => navigate(`/Product`)}>
         {data.map((item, index) => {
           return (
             <S.Post key={index}>
