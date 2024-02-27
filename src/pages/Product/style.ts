@@ -35,7 +35,7 @@ export const TitleBox = styled.div`
 `;
 export const Tag = styled.p`
   display: flex;
-  align-items: start;
+  align-self: start;
   color: #ff5c00;
   font-family: Pretendard;
   font-size: 16px;
@@ -48,7 +48,6 @@ export const Title = styled.p`
   color: #000;
   font-family: Pretendard;
   font-size: 16px;
-  font-weight: 500;
   letter-spacing: 1.12px;
 `;
 
@@ -57,8 +56,21 @@ export const Price = styled.p`
   color: #000;
   font-family: Pretendard;
   font-size: 24px;
-  font-weight: 500;
   letter-spacing: 1.92px;
+`;
+
+export const InfoBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-right: 5%;
+`;
+export const Intro = styled.p`
+  color: rgba(0, 0, 0, 0.6);
+  font-family: Pretendard;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  display: flex;
 `;
 
 export const Box = styled.div`
@@ -70,17 +82,18 @@ export const Box = styled.div`
 `;
 
 export const MiddleBox = styled.div`
+  width: 100%;
   display: flex;
-  align-items: start;
-  margin-top: 5%x;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5%;
 `;
 
 export const Info = styled.p`
-  color: #000;
+  display: flex;
   font-family: Pretendard;
+  color: #000;
+  margin-left: 5%;
   font-size: 24px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
   letter-spacing: 1.92px;
 `;
