@@ -26,12 +26,8 @@ const Search = () => {
           </S.RecentBoxLayout>
         </S.RecentLayout>
       </S.TopBox>
-      <S.MidGap>
-
-      </S.MidGap>
-      <S.BottomBox>
-        
-      </S.BottomBox>
+      <S.MidGap></S.MidGap>
+      <S.BottomBox></S.BottomBox>
     </S.Display>
   );
 };

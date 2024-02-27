@@ -5,17 +5,18 @@ import axios from "axios";
 import { useEffect } from "react";
 
 const Login = () => {
-
-  let kakaoURL = ""
+  let kakaoURL = "";
 
   useEffect(() => {
     const getKakaoURL = async () => {
-      const { data } = await axios.get("https://prod-server.xquare.app/nudia/kakao")
-      console.log(data)
-      kakaoURL = data
-    }
-    getKakaoURL()
-  },[])
+      const { data } = await axios.get(
+        "https://prod-server.xquare.app/nudia/kakao",
+      );
+      console.log(data);
+      kakaoURL = data;
+    };
+    getKakaoURL();
+  }, []);
 
   const handleLogin = () => {
     window.location.href = kakaoURL;
