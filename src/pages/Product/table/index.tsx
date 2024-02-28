@@ -2,17 +2,17 @@ import styled from "styled-components";
 
 const Table = () => {
   const data = [
-    { id: 1, name: "탄수화물", kcal: "g", minus: "-" },
-    { id: 2, name: "식이섬유", kcal: "g", minus: "-" },
-    { id: 3, name: "당류", kcal: "g", minus: "-" },
-    { id: 4, name: "단백질", kcal: "g", minus: "-" },
-    { id: 5, name: "지방", kcal: "g", minus: "-" },
-    { id: 6, name: "포화지방", kcal: "g", minus: "-" },
-    { id: 7, name: "트랜스지방", kcal: "g", minus: "-" },
-    { id: 8, name: "콜레스테롤", kcal: "g", minus: "-" },
-    { id: 9, name: "나트륨", kcal: "mg", minus: "-" },
-    { id: 10, name: "칼슘", kcal: "mg", minus: "-" },
-    { id: 2, name: "철", kcal: "mg", minus: "-" },
+    { name: "탄수화물", kcal: "g", minus: "-" },
+    { name: "식이섬유", kcal: "g", minus: "-" },
+    { name: "당류", kcal: "g", minus: "-" },
+    { name: "단백질", kcal: "g", minus: "-" },
+    { name: "지방", kcal: "g", minus: "-" },
+    { name: "포화지방", kcal: "g", minus: "-" },
+    { name: "트랜스지방", kcal: "g", minus: "-" },
+    { name: "콜레스테롤", kcal: "g", minus: "-" },
+    { name: "나트륨", kcal: "mg", minus: "-" },
+    { name: "칼슘", kcal: "mg", minus: "-" },
+    { name: "철", kcal: "mg", minus: "-" },
   ];
   return (
     <>
@@ -25,8 +25,8 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
-            <tr key={item.id}>
+          {data.map((item, index) => (
+            <tr key={index}>
               <Td>{item.name}</Td>
               <Td>{item.kcal}</Td>
               <Td>{item.minus}</Td>
