@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import * as S from "./style";
 
 const Table = () => {
   const data = [
@@ -16,60 +16,26 @@ const Table = () => {
   ];
   return (
     <>
-      <TableBox>
+      <S.TableBox>
         <thead>
           <tr>
-            <Th>열량</Th>
-            <Th>0 kcal</Th>
-            <Th>-</Th>
+            <S.Th>열량</S.Th>
+            <S.Th>0 kcal</S.Th>
+            <S.Th>-</S.Th>
           </tr>
         </thead>
         <tbody>
           {data.map((item, index) => (
             <tr key={index}>
-              <Td>{item.name}</Td>
-              <Td>{item.kcal}</Td>
-              <Td>{item.minus}</Td>
+              <S.Td>{item.name}</S.Td>
+              <S.Td>{item.kcal}</S.Td>
+              <S.Td>{item.minus}</S.Td>
             </tr>
           ))}
         </tbody>
-      </TableBox>
+      </S.TableBox>
     </>
   );
 };
 
 export default Table;
-
-const TableBox = styled.table`
-  padding: 2.5%;
-  width: 100%;
-  margin-top: 5%;
-`;
-
-const Th = styled.th`
-  color: #ff5c00;
-  font-family: Pretendard;
-  font-size: 16px;
-  letter-spacing: 1.28px;
-  padding: 8px;
-
-  border-bottom: 1px solid #aaa;
-  border-right: 1px solid #aaa;
-  &:last-child {
-    border-right: none;
-  }
-`;
-
-const Td = styled.td`
-  padding: 3%;
-  color: #000;
-  font-family: Pretendard;
-  font-size: 16px;
-  letter-spacing: 1.28px;
-
-  border-bottom: 1px solid #aaa;
-  border-right: 1px solid #aaa;
-  &:last-child {
-    border-right: none;
-  }
-`;
