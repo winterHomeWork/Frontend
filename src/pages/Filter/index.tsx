@@ -1,5 +1,5 @@
 import * as S from "./style";
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import back from "assets/back.svg";
 
@@ -9,15 +9,24 @@ const gap = 10;
 
 const Filter = () => {
   const navigate = useNavigate();
+  const [selectedFilter, setSelectedFilter] = useState<string | null>(null);
+
+  const selectFilter = (filter: string) => {
+    if (selectedFilter === filter) {
+      setSelectedFilter(null);
+    } else {
+      setSelectedFilter(filter);
+    }
+  };
 
   const [rangeMinValue, setRangeMinValue] = useState(fixedMin);
   const [rangeMaxValue, setRangeMaxValue] = useState(fixedMax);
 
-  const rangeMinValueHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const rangeMinValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setRangeMinValue(parseInt(e.target.value));
   };
 
-  const rangeMaxValueHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const rangeMaxValueHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setRangeMaxValue(parseInt(e.target.value));
   };
 
@@ -31,27 +40,57 @@ const Filter = () => {
       </S.FilterLayout>
       <S.Filter>
         <S.FilterBox>
-          <S.PopularInput type="radio" name="popular" />
+          <S.PopularInput
+            type="radio"
+            name="filter"
+            checked={selectedFilter === "popular"}
+            onChange={() => selectFilter("popular")}
+          />
           <S.Text>인기순</S.Text>
         </S.FilterBox>
         <S.FilterBox>
-          <S.CheapInput type="radio" name="cheap" />
+          <S.CheapInput
+            type="radio"
+            name="filter"
+            checked={selectedFilter === "cheap"}
+            onChange={() => selectFilter("cheap")}
+          />
           <S.Text>저가순</S.Text>
         </S.FilterBox>
         <S.FilterBox>
-          <S.ExpenInput type="radio" name="expen" />
+          <S.ExpenInput
+            type="radio"
+            name="filter"
+            checked={selectedFilter === "expen"}
+            onChange={() => selectFilter("expen")}
+          />
           <S.Text>고가순</S.Text>
         </S.FilterBox>
         <S.FilterBox>
-          <S.TanInput type="radio" name="tan" />
+          <S.TanInput
+            type="radio"
+            name="filter"
+            checked={selectedFilter === "tan"}
+            onChange={() => selectFilter("tan")}
+          />
           <S.Text>탄수화물 함유량 순</S.Text>
         </S.FilterBox>
         <S.FilterBox>
-          <S.JibangInput type="radio" name="jibang" />
+          <S.JibangInput
+            type="radio"
+            name="filter"
+            checked={selectedFilter === "jibang"}
+            onChange={() => selectFilter("jibang")}
+          />
           <S.Text>지방 함유량 순</S.Text>
         </S.FilterBox>
         <S.FilterBox>
-          <S.SugarInput type="radio" name="sugar" />
+          <S.SugarInput
+            type="radio"
+            name="filter"
+            checked={selectedFilter === "sugar"}
+            onChange={() => selectFilter("sugar")}
+          />
           <S.Text>당류 낮은 순</S.Text>
         </S.FilterBox>
       </S.Filter>
